@@ -1,0 +1,65 @@
+.menu-open,
+.menu-close {
+  position: absolute;
+  top: 50px;
+  width: 250px;
+  height: calc(100vh - 50px);
+  background-color: #ff654b;
+  -webkit-transition: left 0.3s ease;
+  transition: left 0.3s ease;
+}
+
+.menu-open {
+  left: 0;
+}
+
+.menu-close {
+  left: -250px;
+}
+
+.menu-button {
+  color: rgba(255, 255, 255, 0.87);
+  border: none;
+  width: 30px;
+  background: transparent;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-panel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-panel-list .menu-panel-item {
+  z-index: 1;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 0 0 20px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  width: 250px;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.menu-panel-list .menu-panel-item:hover {
+  background: #f4f4f4;
+  color: #212121;
+  -webkit-box-shadow: -15px 0 20px 0 #212121;
+          box-shadow: -15px 0 20px 0 #212121;
+  font-weight: bold;
+}
+/*# sourceMappingURL=index.css.map */

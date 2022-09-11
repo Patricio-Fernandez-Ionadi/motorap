@@ -1,0 +1,53 @@
+@import '../../../../theme/theme';
+
+.menu-open,
+.menu-close {
+  position: absolute;
+  top: $navbar-height;
+  width: $menu-panel-size;
+  height: calc(100vh - #{$navbar-height});
+  background-color: $primary-light;
+  transition: left 0.3s ease;
+}
+.menu-open {
+  left: 0;
+}
+.menu-close {
+  left: -$menu-panel-size;
+}
+.menu-button {
+  color: $text-white;
+  border: none;
+  width: 30px;
+  background: transparent;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-panel-list {
+  list-style: none;
+  padding: /* 20px */ 0;
+  margin: 0;
+  // background-color: green;
+  .menu-panel-item {
+    z-index: 1; // this fix a shadow glitch
+    height: 50px;
+    line-height: 50px;
+    padding: 0 0 0 20px;
+    transition: all 0.2s ease;
+    position: relative;
+    width: $menu-panel-size;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: $text-white;
+    &:hover {
+      background: $background-light;
+      color: $black;
+      box-shadow: -15px 0 20px 0 $black;
+      font-weight: bold;
+    }
+  }
+}

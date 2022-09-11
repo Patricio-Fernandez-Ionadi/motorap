@@ -1,0 +1,22 @@
+@import '../../../../theme/theme';
+
+.controls-container {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  gap: 15px;
+}
+.control {
+  cursor: pointer;
+  color: $text-white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  position: relative;
+  &:hover {
+    color: #f9d5d3;
+    border-bottom: 1px solid $white;
+    border-top: 1px solid $white;
+    text-shadow: 0 0 5px $text-white;
+  }
+}
