@@ -1,6 +1,5 @@
-import { IUser } from '../interfaces/user.interface'
-import { MUser } from '../models/user'
-import { encrypt } from '../utils/bcrypt'
+import { IUser } from '../interfaces'
+import { MUser } from '../models'
 
 const getUserByUsername = async (username: string) => {
   const [userToFind] = await MUser.find({ username })
@@ -22,22 +21,22 @@ const getUserByEmail = async (email: string) => {
   }
 }
 
+// Recibe un objeto listo y lo crea en la DB
 const createNewUser = async (user: IUser) => {
-  const { username, email } = user
+  const { email, username, password, name, lastname, birth, role } = user
 
-  // hash pass
-  const HPass = await encrypt(user.password)
-
-  // user
-  const newUser = {
+  const newUser = new MUser<IUser>({
     username,
     email,
-    password: HPass,
-  }
+    name,
+    lastname,
+    birth,
+    password,
+    role,
+  })
 
   // save
   const userCreated = await MUser.create(newUser)
-
   return userCreated
 }
 

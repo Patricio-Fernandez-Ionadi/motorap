@@ -1,4 +1,4 @@
-import './style/index.css'
+// import './style/index.css'
 
 import { Menu, MenuState } from './Menu'
 import { Controls } from './Controls'

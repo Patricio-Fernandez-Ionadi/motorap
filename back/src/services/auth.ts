@@ -1,4 +1,4 @@
-import { MUser } from '../models/user'
+import { MUser } from '../models'
 
 const getUser = async (username: string) => {
   const user = await MUser.findOne({ username })

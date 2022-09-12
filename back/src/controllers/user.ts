@@ -1,23 +1,40 @@
 import { Request, Response } from 'express'
-import {
-  getUserByEmail,
-  getUserByUsername,
-  createNewUser,
-} from '../services/user'
+import { IUser } from '../interfaces'
+import { MUser } from '../models'
+import { createNewUser, getUserByEmail, getUserByUsername } from '../services'
+import { encrypt } from '../utils'
 
-const createUser = async (req: Request, res: Response) => {
+// Comprueba si el usuario o el email existen, procede a preparar el objeto para mandarlo al servicio que lo creará
+const registerUser = async (req: Request, res: Response) => {
   const alreadyExistentUser = await getUserByUsername(req.body.username)
   const alreadyExistentEmail = await getUserByEmail(req.body.email)
 
-  if (alreadyExistentUser || alreadyExistentEmail) {
-    res.send('USUARIO_EXISTENTE')
+  if (alreadyExistentUser) {
+    // 406 not acceptable
+    res.status(406).send('USUARIO_EXISTENTE')
+  } else if (alreadyExistentEmail) {
+    res.status(406).send('CORREO_EXISTENTE')
   } else {
-    const newUser = await createNewUser(req.body)
+    const { email, username, password, name, lastname, birth } = req.body
+    const HPass = await encrypt(password)
+    const defaultRole = 'user'
 
-    res.send(newUser)
+    const newUser = new MUser<IUser>({
+      username,
+      email,
+      name,
+      lastname,
+      birth,
+      password: HPass,
+      role: defaultRole,
+    })
+    const userCreated = await createNewUser(newUser)
+
+    // 201 created
+    res.status(201).send(userCreated)
   }
 }
 
 const actualizarUsuario = async (req: Request, res: Response) => {}
 
-export { createUser, actualizarUsuario }
+export { registerUser, actualizarUsuario }

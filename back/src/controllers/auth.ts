@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import { getUser } from '../services/auth'
-import { validatePass } from '../utils/bcrypt'
+import { getUser } from '../services'
+import { validatePass } from '../utils'
 
 const logUser = async ({ body }: Request, res: Response) => {
   const { username, password } = body
