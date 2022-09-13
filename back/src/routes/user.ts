@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { registerUser } from '../controllers'
+import { obtenerUsuarioPorId } from '../controllers'
 
 const router = Router()
 
-router.post('/new', registerUser)
+router.get('/:id', obtenerUsuarioPorId)
 
 export { router }

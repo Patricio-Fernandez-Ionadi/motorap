@@ -21,6 +21,14 @@ const getUserByEmail = async (email: string) => {
   }
 }
 
+const getUserById = async (id: string) => {
+  const [user] = await MUser.find({ _id: id })
+
+  if (!user.username) return
+
+  return user
+}
+
 // Recibe un objeto listo y lo crea en la DB
 const createNewUser = async (user: IUser) => {
   const { email, username, password, name, lastname, birth, role } = user
@@ -40,4 +48,4 @@ const createNewUser = async (user: IUser) => {
   return userCreated
 }
 
-export { getUserByUsername, getUserByEmail, createNewUser }
+export { getUserByUsername, getUserByEmail, getUserById, createNewUser }

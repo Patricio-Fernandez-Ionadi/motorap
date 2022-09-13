@@ -1,0 +1,7 @@
+GET http://localhost:3001/api/user/631fb616464f1ebbff7bf98b
+
+
+###
+# FORCED ERROR
+# ro reconoce el string como una _id valida pero no encuentro donde parar el error o redireccionar 12/9/22
+GET http://localhost:3001/api/user/wewfwef

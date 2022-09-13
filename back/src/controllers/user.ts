@@ -1,11 +1,16 @@
 import { Request, Response } from 'express'
 import { IUser } from '../interfaces'
 import { MUser } from '../models'
-import { createNewUser, getUserByEmail, getUserByUsername } from '../services'
+import {
+  createNewUser,
+  getUserByEmail,
+  getUserById,
+  getUserByUsername,
+} from '../services'
 import { encrypt } from '../utils'
 
 // Comprueba si el usuario o el email existen, procede a preparar el objeto para mandarlo al servicio que lo creará
-const registerUser = async (req: Request, res: Response) => {
+const registrarUsuario = async (req: Request, res: Response) => {
   const alreadyExistentUser = await getUserByUsername(req.body.username)
   const alreadyExistentEmail = await getUserByEmail(req.body.email)
 
@@ -35,6 +40,16 @@ const registerUser = async (req: Request, res: Response) => {
   }
 }
 
+const obtenerUsuarioPorId = async (req: Request, res: Response) => {
+  const { id } = req.params
+  const usuarioObtenido = await getUserById(id)
+
+  if (!usuarioObtenido) {
+    res.status(404).send('USUARIO_INEXISTENTE')
+  }
+  res.status(200).send(usuarioObtenido)
+}
+
 const actualizarUsuario = async (req: Request, res: Response) => {}
 
-export { registerUser, actualizarUsuario }
+export { registrarUsuario, actualizarUsuario, obtenerUsuarioPorId }
