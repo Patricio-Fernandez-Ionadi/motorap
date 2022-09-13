@@ -138,4 +138,45 @@
 .status-container {
   color: rgba(255, 255, 255, 0.87);
 }
+
+.inputs-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-container {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-label {
+  line-height: 40px;
+  margin: 0 10px;
+}
+
+.input-element {
+  padding: 0 0 0 10px;
+  height: 40px;
+  width: 80%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  -webkit-transition: font 0.2s;
+  transition: font 0.2s;
+}
+
+.input-element:focus {
+  outline: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 /*# sourceMappingURL=index.css.map */

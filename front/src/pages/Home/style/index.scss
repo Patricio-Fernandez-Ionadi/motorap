@@ -1,0 +1,31 @@
+@import '../../../theme/theme';
+
+.inputs-container {
+  width: $full;
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+.input-container {
+  width: $full;
+  height: 40px;
+  display: flex;
+}
+.input-label {
+  line-height: 40px;
+  margin: 0 10px;
+}
+.input-element {
+  padding: 0 0 0 10px;
+  height: 40px;
+  width: 80%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #{$gray};
+  transition: font 0.2s;
+  &:focus {
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}

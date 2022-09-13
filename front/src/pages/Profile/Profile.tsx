@@ -48,5 +48,6 @@ export const Profile = () => {
         </div>
       </div>
     </div>
+    // TODO: AGREGAR AGENDA DE DIRECCIONES DE LUGARES
   )
 }
