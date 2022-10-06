@@ -1,8 +1,16 @@
 @import './theme';
+@import './classes/_index.scss';
+// @import './values/_index.scss';
 
+// Navbar
 @import '../components/Navbar/style/index.scss';
 @import '../components//Navbar/Controls/style/index.scss';
 @import '../components//Navbar/Menu/style/index.scss';
 @import '../components//Navbar/Status/style/index.scss';
 
+// Unordered
+@import '../components/TripForm/style/_index.scss';
+// @import '../components/DiaryTable/style/_index.scss';
+
+// Pages
 @import '../pages/Home/style/index.scss';
