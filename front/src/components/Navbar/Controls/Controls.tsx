@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 
-// import './style/index.css'
-
 export const Controls = () => {
   return (
     <ul className='controls-container'>

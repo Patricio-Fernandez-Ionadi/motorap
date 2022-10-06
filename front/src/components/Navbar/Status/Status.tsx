@@ -1,5 +1,4 @@
-import { Fragment, useState } from 'react'
-// import './style/index.css'
+import { useState } from 'react'
 
 export const Status = () => {
   const [user, setUser] = useState(false)
