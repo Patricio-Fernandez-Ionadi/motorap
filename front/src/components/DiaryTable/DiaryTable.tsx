@@ -1,0 +1,48 @@
+export const DiaryTable = () => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Destino/s</th>
+          <th>Kilometros</th>
+          <th>Espera</th>
+          <th>Lluvia</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Cañuelas</td>
+          <td>140</td>
+          <td>1h</td>
+          <td>no</td>
+          <td>11000</td>
+        </tr>
+        <tr>
+          <td>Ceraldi</td>
+          <td>14</td>
+          <td>0h</td>
+          <td>no</td>
+          <td>980</td>
+        </tr>
+        <tr>
+          <td>Bbva</td>
+          <td>6</td>
+          <td>1h</td>
+          <td>no</td>
+          <td>1700</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Kilometros</td>
+          <td>160</td>
+          <td>2h</td>
+          <td></td>
+          <td>13600</td>
+        </tr>
+      </tfoot>
+    </table>
+  )
+}
